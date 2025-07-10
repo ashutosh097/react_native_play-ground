@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
-  FlatList, RefreshControl,ActivityIndicator
+  FlatList, RefreshControl, ActivityIndicator
 } from 'react-native';
 import NewsItem from '../component/NewsItem';
 import { fetchData } from '../component/ApiService';
@@ -14,7 +14,7 @@ const NEWS_KEY = 'news_articles';
 
 function NewsListScreen() {
 
-  const navigationRoute = useNavigation
+  const navigationRoute = useNavigation();
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -90,16 +90,16 @@ function NewsListScreen() {
   return (
     <View style={styles.container}>
       {articles.length == 0 && (
-        <ActivityIndicator size="large" color="#007BFF" style={{margin:16}} />
+        <ActivityIndicator size="large" color="#007BFF" style={{ margin: 16 }} />
       )}
       {articles.length != 0 && <FlatList
         data={articles}
         keyExtractor={(item, index) => index.toString()}
         refreshing={refreshing}
         onRefresh={onRefresh}
-        renderItem={({ item }) => <NewsItem article={item}
-         onPress={()=>navigationRoute.navigate(}
-         />}
+        renderItem={({ item }) => (
+          <NewsItem article={item} onPress={() => navigationRoute.navigate('NewsDetail', { article: item })} />
+        )}
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.5}
         ListFooterComponent={
