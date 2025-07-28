@@ -1,0 +1,9 @@
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/CMakeFiles/appmodules.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/ashutoshkumar/MyApp/android/app/.cxx/Debug/2f2y581q/arm64-v8a/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir

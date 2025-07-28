@@ -1,0 +1,1 @@
+/Users/ashutoshkumar/MyApp/react_native_play-ground/android/app/build/intermediates/cxx/Debug/4r4i6o3a/obj/x86_64
