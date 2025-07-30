@@ -1,8 +1,22 @@
-import React, {useState} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
-function CounterScreen() {
+function CounterScreen({ navigation }) {
   const [count, setCount] = useState(0);
+  const [seconds, setTimer] = useState(60);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setTimer(oldValue => oldValue - 1);
+      }, 1000);
+  
+      return () => {
+        clearInterval(interval);
+      };
+    }, []);
+
+    const time = seconds
+
   return (
     <View style={styles.center}>
       <Text style={styles.count}>{count}</Text>
@@ -12,10 +26,18 @@ function CounterScreen() {
         </View>
         <View style={styles.minusButtonContainer}>
           <Button
-            title="- (Minus)"
-            onPress={() => setCount(count - 1)}
+            title="- Minus"
+            onPress={() => navigation.goBack()}
             color="red"
           />
+        </View>
+      </View>
+
+      <View style={styles.progressWrapper}>
+        <Text style={styles.timerText}>{time} seconds remaining</Text>
+        <View style={styles.progressBarBackground}>
+          <View style={[styles.progressBarFill, { flex: time/60 }]} />
+          <View style={{ flex: 1 - time/60 }} />
         </View>
       </View>
     </View>
@@ -29,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  count: {fontSize: 50, margin: 20},
+  count: { fontSize: 50, margin: 20 },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -48,6 +70,25 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: 'red',
     borderRadius: 12,
+  },
+  progressWrapper: {
+    alignItems: 'center',
+  },
+  timerText: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 8,
+  },
+  progressBarBackground: {
+    flexDirection: 'row',
+    width: '80%',
+    height: 6,
+    backgroundColor: '#eee',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    backgroundColor: '#4caf50',
   },
 });
 export default CounterScreen;

@@ -1,3 +1,4 @@
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
@@ -11,9 +12,11 @@ function GreetingCard({name, message}) {
 }
 
 function GreetingScreen() {
+  const {name} = useRoute().params
+
   return (
     <View style={styles.center}>
-      <GreetingCard name="Ashutosh" message="Start React Native!" />
+      <GreetingCard name={name} message="Start React Native!" />
       <GreetingCard name="Name" message="Keep Doing!" />
       <GreetingCard name="Any Name" message="You're doing great!" />
     </View>
