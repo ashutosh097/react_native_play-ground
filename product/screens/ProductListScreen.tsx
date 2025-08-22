@@ -38,32 +38,32 @@ const ProductListScreen = () => {
       />
 
       {/* Category Filter */}
-      {/* <FlatList
-        horizontal
-        data={["", ...categories]}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[
-              styles.categoryButton,
-              selectedCategory === item && styles.categoryButtonActive,
-            ]}
-            onPress={() => setSelectedCategory(item === "" ? "" : item)}
-          >
-            <Text
-              style={[
-                styles.categoryText,
-                selectedCategory === item && styles.categoryTextActive,
-              ]}
-            >
-              {item === "" ? "All" : item}
-            </Text>
-          </TouchableOpacity>
-        )}
-        showsHorizontalScrollIndicator={false}
-      /> */}
+<FlatList
+  horizontal
+  data={[{ slug: "", name: "All" }, ...categories]}
+  keyExtractor={(item, index) => (item.slug ?? index).toString()}
+  renderItem={({ item }) => (
+    <TouchableOpacity
+      style={[
+        styles.categoryButton,
+        selectedCategory === item.slug && styles.categoryButtonActive,
+      ]}
+      onPress={() => setSelectedCategory(item.slug)}
+    >
+      <Text
+        style={[
+          styles.categoryText,
+          selectedCategory === item.slug && styles.categoryTextActive,
+        ]}
+      >
+        {item.name}
+      </Text>
+    </TouchableOpacity>
+  )}
+  showsHorizontalScrollIndicator={false}
+/>
 
-      {/* Products */}
+    
       <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}
