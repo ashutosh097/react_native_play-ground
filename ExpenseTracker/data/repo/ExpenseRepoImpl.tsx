@@ -1,6 +1,6 @@
 import { Expense } from "../../domain/entities/Expense";
 import { ExpenseRepository } from "../../domain/repositories/ExpenseRepo";
-import { getDb } from "../db";
+import { getDb } from "../db.tsx";
 
  class ExpenseRepositoryImpl implements ExpenseRepository {
   async addExpense(expense: Expense): Promise<void> {
